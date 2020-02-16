@@ -7,20 +7,20 @@ disqus:
 google-ID: ''
 
 menu:
-- {name: 'Interesting Facts', folder: 'pages', file: 'facts.html'}
-- {name: 'Learning Resources', folder: 'pages', file: 'resources.html'}
-- {name: 'Sample Posts', folder: 'pages', file: 'sample-posts.html'}
-- {name: 'Documentation', folder: 'pages', file: 'documentation.html'}
+- {name: 'Code & Electronics', folder: 'pages', file: 'code.html'}
+- {name: 'Photos', folder: 'pages', file: 'photos.html'}
+- {name: 'Random', folder: 'pages', file: 'random.html'}
 - {name: 'About', folder: 'pages', file: 'about.html'}
 - {name: 'Contact', folder: 'pages', file: 'contact.html'}
 
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
 social:
 - {icon: 'twitter', link: 'https://twitter.com/tomglover24'}
+- {icon: 'github', link: 'https://github.com/tomglover24'}
 #- {icon: 'facebook', link: 'https://www.facebook.com/Le.Paul.94'}
 #- {icon: 'instagram', link: 'https://instagram.com/paululele'}
-- {icon: 'envelope', link: 'mailto:tom@tjg.me.uk'}
-- {icon: 'rss-square', link: 'feed.xml'}
+- {icon: 'envelope', link: 'mailto:%74%6fm@tj&#103;.%6de%2euk?subject=Web%20Contact%3A'}
+# - {icon: 'rss-square', link: 'feed.xml'}
 # - {icon: 'rss-square', link: 'rss-feed.xml'}
 
 # Customize site text
