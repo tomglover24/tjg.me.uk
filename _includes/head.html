@@ -18,12 +18,17 @@
   <meta property="og:title" content="{{ page.title }}" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
-  <meta property="og:image" content="{{ site.url }}/images/{{ page.image.feature }}" />
+  {% if page.url == "/index.html" %}
+  <meta property="og:image" content="{{ site.url }}/assets/img/{{ site.posts[0].image }}" />
+  {% endif %}
+  {% if page.url != "/index.html" %}
+  <meta property="og:image" content="{{ site.url }}/assets/img/{{ page.image }}" />
+  {% endif %}
 
   <!-- Use Atom -->
   {% feed_meta %}
   <!-- RSS-v2.0
-  <link href="{{ site.github.url }}/rss-feed.xml" type="application/rss+xml" rel="alternate" title="{{ site.title }} | {{ site.description }}"/>
+  <link href="{{ site.url }}/rss-feed.xml" type="application/rss+xml" rel="alternate" title="{{ site.title }} | {{ site.description }}"/>
   //-->
 
 

@@ -2,6 +2,7 @@
 
 # jekyll-paginate configuration
 paginate:            5
+url: https://www.tjg.me.uk
 
 # Build settings
 markdown:            kramdown
