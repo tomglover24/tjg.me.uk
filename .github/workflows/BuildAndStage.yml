@@ -1,0 +1,37 @@
+name: Build and Deploy to Staging
+
+on:
+  pull_request:
+      branches:
+        - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby 2.7
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.7.x
+    - name: Build and test with Jekyl
+      run: |
+        gem install jekyll bundler
+        bundle install
+        bundle exec jekyll build --config _config.yml
+    - name: RSyncer Action
+      uses: Pendect/action-rsyncer@v1.1.0
+      env:
+          DEPLOY_KEY: ${{secrets.DEPLOY_KEY}}
+      with:
+        # Rsync flags
+        # Rsync options (exclusion)
+        options: "" # default is 
+        # SSH command line options
+        ssh_options: "" # default is 
+        # Local folder to be synced
+        src: _site/
+        # Remote server and path. i.e user@server.com:/var/www/server.com/
+        dest: deploybot@s1.yonti.co.uk:/var/www/deployTest/
