@@ -4,7 +4,7 @@ disqus:
   disqus_shortname: 'millennial-3'
 
 # If you are not using Google Analytics, please change 'google-ID' to an empty string
-google-ID: ''
+google-ID: 'UA-158843014-1'
 
 menu:
 - {name: 'Code & Electronics', folder: 'pages', file: 'code.html'}
