@@ -15,15 +15,17 @@
   <link rel="stylesheet" href="{{ site.url }}/assets/css/syntax.css">
 
   <meta property="og:site_name" content="{{ site.data.setting.title }}" />
-  <meta property="og:title" content="{{ page.title }}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@tomglover24" />
+  {% if page.title == "Home" %}
+    <meta property="og:title" content="{{ site.title }} | {{ site.description }}" />
+  {% else %}
+    <meta property="og:title" content="{{ page.title }} | {{ site.title }}" />
+  {% endif %}
+ 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
-  {% if page.url == "/index.html" %}
-  <meta property="og:image" content="{{ site.url }}/assets/img/{{ site.posts[0].image }}" />
-  {% endif %}
-  {% if page.url != "/index.html" %}
   <meta property="og:image" content="{{ site.url }}/assets/img/{{ page.image }}" />
-  {% endif %}
 
   <!-- Use Atom -->
   {% feed_meta %}
@@ -34,10 +36,11 @@
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-
+<!--
   <script type="text/javascript" async
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
   </script>
+  -->
 
   <!-- Google Analytics -->
   {% include google-analytics.html %}
