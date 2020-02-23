@@ -1,7 +1,7 @@
 name: Build and Deploy to Staging
 
 on:
-  pull_request:
+  push:
       branches:
         - master
 
@@ -20,14 +20,14 @@ jobs:
       run: |
         gem install jekyll bundler
         bundle install
-        bundle exec jekyll build --config _config.yml,_config_staging.yml
+        bundle exec jekyll build --config _config.yml
     - name: RSyncer Action
       uses: Pendect/action-rsyncer@v1.1.0
       env:
           DEPLOY_KEY: ${{secrets.DEPLOY_KEY}}
       with:
         # Rsync flags
-        flags: "-avzr --no-o --no-g --delete"
+        flags: "-avzr --delete --no-o --no-g --no-perms --no-perms"
         # Rsync options (exclusion)
         options: "" # default is 
         # SSH command line options
